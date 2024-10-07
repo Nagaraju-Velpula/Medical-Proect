@@ -1,0 +1,95 @@
+body{
+    background-image:url("../../../assets/Images/AdobeStock3.jpeg") !important ;
+    /*background-color: white;*/
+    position: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display:block;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  .invamount{
+    background-color: #ffeb3b;
+      height: 50px;
+      border-radius: 4px;
+      /* text-align: center; */
+      padding: 15px;
+      font-size: 23px;
+  }
+  
+  .invlabel{
+    font-size: 13px;
+      font-weight: 500;
+      color: #100f0f9c;
+  }
+  .add{
+    font-size: 12px;
+      color: #9e9e9ede;
+  }
+  .plamt{
+    height: 100px;
+      background: #70d57494;
+      border-radius: 4px;
+      text-align: center;
+      font-size: 23px;
+      padding-top: 42px;
+  }
+  .plhead{
+    font-size: 13px;
+      color: #8b8282;
+      font-weight: 500;
+  }
+  .revamt{
+    background-color: #ffeb3b;
+      border-radius: 4px;
+      height: 41px;
+      padding: 10px;
+      font-size: 21px;
+  }
+  .expamt{
+    background-color: #9e9e9e45;
+      height: 37px;
+      border-radius: 4px;
+      padding: 10px;
+      font-size: 21px;
+  }
+  .chart{
+    height: 217px;
+      background: #266c29;
+      border-radius: 4px;
+      text-align: center;
+      padding: 15px;
+  }
+  .cham{
+    background-color: #ffeb3b;
+    height: 44px;
+    border-radius: 4px;
+    font-size: 21px;
+      padding: 10px;
+  }
+  .table thead th { 
+    border:none !important;
+    color: #786f6f;
+      font-weight: 400;
+  }
+  .table td, .table th {
+    padding: 0 !important;
+    border:none !important
+   }
+  .all{
+    margin-left: 105px;
+  }
+  .navside{
+    position: fixed;
+  }
+  #logo{
+    cursor: pointer;
+      height: 40px;
+      margin-left: 150px;
+      margin-top: 8px;
+  }

@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden; 
+background-color: aliceblue !important;}
+/* @import '~mdb-ui-kit/css/mdb.min.css'; */
+/* .cdk-overlay-pane background {
+
+} */
+.background .mat-dialog-container {
+    background: url("assets/Images/signup_background.png") !important;
+   
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    color: yellow;
+  }
+   .slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: radial-gradient(black, transparent) !important;
+    outline: none;
+    background: radial-gradient(black, transparent) !important;
+}
+.slick-next {
+  right: 30px !important;
+}
+.slick-prev, .slick-next { 
+  top:35% !important
+}
+
+

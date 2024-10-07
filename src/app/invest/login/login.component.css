@@ -1,0 +1,87 @@
+
+.head{
+  padding-top: 30px;
+  padding-left: 150px;
+  font-weight: bolder;
+  font-size: 24px;
+}
+button {
+  border-radius: 10px;
+  border: 1px solid yellow;
+background-color:yellow;
+color:green;
+font-size: 14px;
+font-weight: bold;
+padding: 12px 20px;
+  margin-left: 70px;
+
+}
+#or{
+  padding-right: 370px;
+}
+
+
+#Password{
+  width: 400px;
+
+}
+input {
+background-color: #eee;
+border: none;
+border-radius: 10px;
+  flex: 0 1 auto;
+padding: 12px 15px;
+margin: 8px 0;
+width: 60%;
+}
+.column {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  width: 2em;
+  text-align: center;
+  padding-right: 70px;
+}  
+.man{
+  position: absolute;
+  padding-left: 70px;
+  padding-right: 50px;
+  overflow: hidden;
+  
+}
+.close-button{
+  float: right;
+  top:-24px;
+  right:-24px;
+}
+
+.close-icon {
+  transition: 1s ease-in-out;
+}
+
+.close-icon:hover {
+  transform: rotate(180deg);
+}
+
+::ng-deep .icon-outside .close-button{
+  float: right;
+  top:-52px;
+  right:-52px;
+}
+
+::ng-deep .icon-outside .mat-dialog-container {
+ overflow: unset
+}
+.close{
+  float: right;
+  top:-24px;
+  right:-24px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+#openlog{
+  cursor: pointer;
+}

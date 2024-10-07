@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+<!-- <link href="pidie-0.0.8.css" rel="stylesheet" /> -->
+
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+	<mat-icon class="close-icon" color="black">close</mat-icon>
+</button>
+
+<div class="limiter">
+	<form class="login100-form validate-form p-b-33 p-t-30">
+		<div class="container-login" [formGroup]="userDetailForm">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title " style="color: black;">
+					Account Signup
+				</span>
+
+				<div [formGroup]="userDetailForm">
+					<div class="form-group" class="wrap-input100 validate-input" data-validate="Enter username">
+						<input class="input100" type="text" placeholder="Username" name="pass"
+							formControlName="FULL_NAME">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+				</div>
+
+				<div [formGroup]="userDetailForm">
+					<div class="form-group" class="wrap-input100 validate-input">
+						<input class="input100" type="email" placeholder="Email" name="pass" formControlName="EMAIL">
+						<span class="focus-input100" data-placeholder="&#xe818;"></span>
+					</div>
+				</div>
+
+				<div [formGroup]="userDetailForm">
+					<div class="pd-telephone-input form-group" class="wrap-input100 validate-input">
+						<label for="country">Choose a country:</label>
+
+						<select name="country" id="country">
+						  <option value="+91">India</option>
+						  <option value="+21">America</option>
+						  <option value="+52">Britin</option>
+						  <option value="+64">Aus</option>
+						</select>
+						<input class="input100" type="tel" placeholder="Phone Number" name="pass"
+							formControlName="PHONE_NUMBER">
+						<!-- <ngx-intl-tel-input class="input100 fixes" [cssClass]="'custom'"
+							[preferredCountries]="[CountryISO.UnitedStates, CountryISO.UnitedKingdom]"
+							[enableAutoCountrySelect]="true" [enablePlaceholder]="true" [searchCountryFlag]="true"
+							[searchCountryField]="[SearchCountryField.Iso2, SearchCountryField.Name]"
+							[selectedCountryISO]="CountryISO.UnitedKingdom" [phoneValidation]="true" name="phone"
+							formControlName="PHONE_NUMBER">
+						</ngx-intl-tel-input> -->
+						<span class="focus-input100" data-placeholder="&#xe830;"></span>
+					</div>
+				</div>
+
+				<div [formGroup]="userDetailForm">
+					<div class="form-group" class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" placeholder=" Enter Password" name="pass"
+							formControlName="PASSWORD">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+				</div><br><br>
+
+				<div class="form-group form-check">
+					<input type="checkbox" id="exampleCheck1" formControlName="TERMS" #chkEnable ngModel
+						(change)="disableField(chkEnable.checked)" />
+					<label for="exampleCheck1">
+						I Agree Terms & Conditions
+					</label>
+				</div>
+
+				<div class="container-login100-form-btn m-t-32">
+					<button class="btn-grad" (click)="signup()" [disabled]="!chkEnable.checked">
+						SIGNUP
+					</button>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</div>
+
+
+
+
+
+
+
+
+</html>

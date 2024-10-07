@@ -1,0 +1,22 @@
+<div class="sidenav">
+
+    <div class="inline" [routerLink]="['/opp/details']" routerLinkActive="active" (click)="routes()"> <img
+            src="../../../assets/Images/Layer 2.png" alt="img" class="custimg" width="30" height="30" />
+        <label class="navlable">Add Product</label>
+    </div>
+    <div class="inline" [routerLink]="['/opp/list']" routerLinkActive="active" (click)="routes()"> <img
+            src="../../../assets/Images/listing.png" alt="img" class="custimg" width="30" height="30" />
+        <label class="navlable">Listing</label>
+    </div>
+
+    <div class="navdown" [routerLink]="['/opp/userlist']" routerLinkActive="active" (click)="routes()"> <img
+            src="../../../assets/Images/User.png" alt="img" class="custimg1" width="30" height="30" />
+        <label class="navlable" style="left: 59%;
+        transform: translate(28%, 2%);">Users List</label>
+    </div>
+    
+    <div class="out" routerLinkActive="active"  (click)="adminout()">
+         <img src="../../../assets/Images/User.png" alt="img" class="custimg1" width="30" height="30" />
+    <label class="navlable" style="transform: translate(28%, 2%);">Sign Out</label>
+</div>
+</div>

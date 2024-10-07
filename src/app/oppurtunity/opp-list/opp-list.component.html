@@ -1,0 +1,133 @@
+<body>
+  <div style="display: flex;">
+    <div class="col-lg-1 col-md-1 col-sm-1">
+      <app-layout></app-layout>
+    </div>
+    <div class="col-lg-11 col-md-11 col-sm-11">
+      <div class="row mb-2 mt-2">
+        <div class="col-lg-5 col-sm-12 col-md-5">
+          <div style=" height: 34px;;">
+            <img src="assets\Images\first_pharmacy.png" alt="img" id="logo" />
+          </div>
+        </div>
+        <div class="col-lg-7 col-sm-12 col-md-7">
+          <div class="float-right">
+            <input type="text" readonly="true" class="input-bg search-img">
+          </div>
+        </div>
+      </div>
+
+    
+
+
+      
+      <div class="container-fluid">
+        <span class="sub-head col-lg-12 col-sm-12 col-md-12">Small Business</span>
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+      smallBusiness">
+            <span id="opn" class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+            <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+            </div>
+            <div class="row m-0" id="size">
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STARTING DATE:</div>
+                <div>{{item.STARTING_DATE}}</div>
+              </div>
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STATUS:</div>
+                <button class="bg-green btn btn-height fs-11">{{item.STATUS}}</button>
+              </div>
+
+              <div class="text-center">
+                <button class="btn bg-white btn-height mr-2 fs-11" (click)="preview()">
+                  PREVIEW
+                </button>
+
+                <button class="btn btn-black btn-height   fs-11" (click)="edit(item.ID)">
+                  EDIT
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="container-fluid">
+        <span class="sub-head col-lg-12 col-sm-12 col-md-12">Medium Business</span>
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+      mediumBusiness">
+            <span id="opn" class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+            <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+            </div>
+            <div class="row m-0" id="size">
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STARTING DATE:</div>
+                <div>{{item.STARTING_DATE}}</div>
+              </div>
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STATUS:</div>
+                <button class="bg-green btn btn-height fs-11">{{item.STATUS}}</button>
+              </div>
+
+              <div class="text-center">
+                <button class="btn bg-white btn-height mr-2 fs-11" (click)="preview()">
+                  PREVIEW
+                </button>
+
+                <button class="btn btn-black btn-height   fs-11" (click)="edit(item.ID)">
+                  EDIT
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="container-fluid">
+        <span class="sub-head col-lg-12 col-sm-12 col-md-12">Large Business</span>
+        <div class="row">
+          <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+      largeBusiness">
+            <span id="opn" class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+            <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+            </div>
+            <div class="row m-0" id="size">
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STARTING DATE:</div>
+                <div>{{item.STARTING_DATE}}</div>
+              </div>
+              <div class="col-lg-6 col-sm-6 col-md-6">
+                <div>STATUS:</div>
+                <button class="bg-green btn btn-height fs-11">{{item.STATUS}}</button>
+              </div>
+
+              <div class="text-center">
+                <button class="btn bg-white btn-height mr-2 fs-11" (click)="preview()">
+                  PREVIEW
+                </button>
+
+                <button class="btn btn-black btn-height   fs-11" (click)="edit(item.ID)">
+                  EDIT
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>

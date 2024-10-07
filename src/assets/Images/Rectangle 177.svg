@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="35" viewBox="0 0 64 35">
+  <g id="Group_23" data-name="Group 23" transform="translate(-280)">
+    <path id="Rectangle_176" data-name="Rectangle 176" d="M0,0H64a0,0,0,0,1,0,0V27a8,8,0,0,1-8,8H8a8,8,0,0,1-8-8V0A0,0,0,0,1,0,0Z" transform="translate(280)" fill="#ffd039"/>
+    <text id="BEST_VALUE" data-name="BEST
+VALUE" transform="translate(312 16)" fill="#162c1d" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-12.806" y="0">BEST</tspan><tspan x="-17.109" y="12">VALUE</tspan></text>
+  </g>
+</svg>

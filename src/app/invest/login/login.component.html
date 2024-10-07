@@ -1,0 +1,48 @@
+<button mat-icon-button class="close" [mat-dialog-close]="true">
+    <mat-icon>close</mat-icon>
+</button>
+<div>
+    <form>
+        <div class="man">
+            <h1 class="head">LOGIN</h1>
+            <div class="box">
+                <div [formGroup]="userDetailForm">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" formControlName="user_mail_id">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" formControlName="user_password">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p class="already">Dont have an account?
+                    <a id="openlog" (click)="openSignUp()"> signup </a>
+                <p>Instead</p>
+                <button id="pos" type="submit" (click)="login1()">LOGIN</button>
+            </div>
+            <div>
+                <p id="or">OR LOGIN USING</p>
+            </div>
+            <div class="icons">
+                <div class="column">
+                    <img src="assets/Images/google.png" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="assets/Images/apple.png" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="assets/Images/facebook.png" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="assets/Images/linkedin.png" style="width:100%">
+                </div>
+                <div class="column">
+                    <img src="assets/Images/twitter.png" style="width:100%">
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>

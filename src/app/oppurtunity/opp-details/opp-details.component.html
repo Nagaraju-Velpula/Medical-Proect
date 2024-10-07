@@ -1,0 +1,221 @@
+<body>
+    <div style="display: flex;">
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <app-layout></app-layout>
+        </div>
+        <div class="col-lg-11 col-md-11 col-sm-11">
+            <div class="row mb-2 mt-2">
+                <div class="col-lg-5 col-sm-12 col-md-5">
+                    <div style=" height: 34px;;">
+                        <img src="assets\Images\first_pharmacy.png" alt="img" id="logo" />
+                    </div>
+                </div>
+                <div [formGroup]="oppDetailForm" class="col-lg-7 col-sm-12 col-md-7">
+                    <div class="float-right">
+                        <div class="form-group">
+                            <div class="toggle-radio">
+                                <input type="radio" name="STATUS" formControlName="STATUS" value="Active" id="Active"
+                                    checked>
+                                <input type="radio" name="STATUS" formControlName="STATUS" value="InActive"
+                                    id="InActive" checked>
+                                <div class="switch">
+                                    <label for="Active">Active</label>
+                                    <label for="InActive">InActive</label>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-height  bg-white mr-2 fs-11 color-red" (click)="delete()">
+                            DELETE
+                        </button>
+                        <button class="btn bg-white btn-height mr-2 fs-11">
+                            PREVIEW
+                        </button>
+                        <button class="btn btn-black btn-height   fs-11" (click)="submit()" *ngIf="!Id">
+                            PUBLISH
+                        </button><button class="btn btn-black btn-height   fs-11" (click)="editForm()" *ngIf="Id">
+                            PUBLISH
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row" [formGroup]="oppDetailForm">
+                <div class="col-lg-5 col-sm-12 col-md-5">
+                    <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                        <span class="sub-head">OPPORTUNITY DETAILS</span>
+                        <div class="form-group">
+                            <select class="form-control input-bg" formControlName="opportunity_name">
+                                <option value="" disabled>Opportunity Name</option>
+                                <option *ngFor="let x of opportunityName" [value]="x.OPPORTUNITY_NAME">
+                                    {{x.OPPORTUNITY_NAME}}</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-bg" placeholder="Investement Amount"
+                                formControlName="Investment_Amount">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-bg" placeholder="ROI Rate"
+                                formControlName="ROI">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control input-bg" formControlName="Opportunity_Type">
+                                <option value="" disabled>Opportunity Type</option>
+                                <option *ngFor="let x of opportunityType" [value]="x.TYPE">{{x.TYPE}}</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                        <span class="sub-head">LOCATION DETAILS</span>
+
+                        <div class="form-group">
+                            <select class="form-control input-bg" formControlName="Area_Name">
+                                <option value="" disabled>Area Name</option>
+                                <option *ngFor="let x of opportunityArea" [value]="x.AREA">{{x.CITY_NAME }}</option>
+
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control input-bg" formControlName="Area_Standard">
+                                <option value="" disabled>Area Standard</option>
+                                <option *ngFor="let x of opportunityStandard" [value]="x.STANDARD">{{x.STANDARD}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                        <span class="sub-head">CASH FLOW</span>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-bg" placeholder="Revenue"
+                                formControlName="Revenue">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-bg" placeholder="Expenses"
+                                formControlName="Expenses">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control input-bg" placeholder="Tax" formControlName="Tax">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-7 col-sm-12 col-md-7">
+                    <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                        <span class="sub-head">OPPORTUNITY IMAGE</span>
+                        <!--<div class="col-lg-3 col-sm-12 col-md-3">
+                <label style="display: none;">
+                    <input id="upload_file1" type="file" #file1 (change)="onChange1(file1)">
+                  </label>
+                <input type="text"  readonly="true" class="form-control input-bg cust-bg-img"
+                     id="file1" (focus)="trigger1()">
+            </div>-->
+
+                        <div class="row">
+                            <div class="col-8">
+                                <label class="btn btn-default p-0">
+                                    <input type="file" accept="image/*" multiple (change)="selectFiles($event)" />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <img *ngFor='let preview of previews' [src]="preview" class="preview">
+                        </div>
+
+                        <div *ngIf="message.length" class="alert alert-secondary my-3" role="alert">
+                            <ul *ngFor="let msg of message; let i = index">
+                                <li>{{ msg }}</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                                <span class="sub-head">DESCRIPTION</span>
+                                <div class="form-group">
+                                    <textarea class="form-control input-bg" placeholder="Opportunity Description"
+                                        rows="3" formControlName="Opportunity_Desc"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                                <span class="sub-head">ATTACHMENTS</span>
+                                <div class="form-group">
+                                    <label style="display: none;">
+                                        <input id="upload_file" type="file" #file (change)="onChange(file)">
+                                    </label>
+                                    <input type="text" readonly="true" class="form-control input-bg bg-img"
+                                        placeholder="Upload File" id="file" (focus)="trigger()">
+                                </div>
+                                <div *ngIf="fileName">
+                                    <span>{{fileName}}</span><i class="fa fa-trash float-right" aria-hidden="true"
+                                        (click)="removeFile()">delete</i>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                                <span class="sub-head">DESCRIPTION</span>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-bg" placeholder="Tenanat Name"
+                                        formControlName="Tenant_Name">
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control input-bg" formControlName="Tenant_Country">
+                                        <option value="" disabled>Tenant Country</option>
+                                        <option *ngFor="let x of opportunityCountry" [value]="x.COUNTRY_CODE">
+                                            {{x.COUNTRY_CODE}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control input-bg" rows="3" formControlName="Tenant_Desc"
+                                        placeholder="Tenanat Description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12 col-md-6">
+                            <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                                <span class="sub-head">CONTRACT DETAILS</span>
+                                <div class="form-group">
+                                    <select class="form-control input-bg" (change)="durationChange($event)"
+                                        formControlName="Contract_Duration">
+                                        <option value="" disabled>Contract Duration</option>
+                                        <option *ngFor="let x of opportunityDuration" [value]="x.DURATION">
+                                            {{x.DURATION}}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-bg" placeholder="Starting Date"
+                                        formControlName="Starting_Date">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-bg" placeholder="Ending Date"
+                                        formControlName="Ending_Date">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-sm-12 col-md-12 opp-bg">
+                                <button class="btn btn-bg mr-2">
+                                    SERIOUS BUSINESS
+                                </button>
+                                <button class="btn btn-bg mr-2">
+                                    NEWBIE
+                                </button>
+                                <button class="btn btn-bg mr-2">
+                                    VALUE FOR
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

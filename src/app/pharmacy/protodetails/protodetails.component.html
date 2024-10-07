@@ -1,0 +1,181 @@
+<div class="col-lg-1 col-md-1 col-sm-1 navside">
+    <app-sidenav></app-sidenav>
+</div>
+
+
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- <div class="bar">
+    <span class="bar_content">
+        <img src="assets/Images/clinicalupdate.png" alt="logo" id="logo">
+    </span>
+</div> -->
+<img src="assets/Images/first_pharmacy.png" alt="logo" id="logo">
+
+
+
+<div class="dash">
+    <div class="row newdashboards ">
+        <div style="height: 120px;" class="col-lg-6 col-xl-3 ">
+            <div class="card bg-primary text-white h-100 mt-3 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="me-3" *ngFor="let item of typeDetails3;">
+                            <div class="text-white-75 medium">REVENUE</div>
+                            <i class="fa fa-inr " aria-hidden="true"></i>
+                            {{item.REVENUE}}.00
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-activity">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 120px;" class="col-lg-6 col-xl-3">
+            <div class="card bg-warning text-white h-100 mt-3 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="me-3" *ngFor="let item of typeDetails2;">
+                            <div class="text-white-75 medium">INVESTMENT AMOUNT</div>
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+                            {{item.INVESTMENT_AMOUNT}}.00
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-dollar-sign feather-xl text-white-50">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 120px;" class="col-lg-6 col-xl-3">
+            <div class="card bg-success text-white h-100 mt-3 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="me-3" *ngFor="let item of typeDetails4;">
+                            <div class="text-white-75 medium">PROFIT & LOSS</div>
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+                            {{item.PROFIT_LOSS}}.00
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-trending-up">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                            <polyline points="17 6 23 6 23 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 120px;" class="col-lg-6 col-xl-3">
+            <div class="card bg-danger text-white h-100 mt-3 mb-4">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="me-3" *ngFor="let item of typeDetails1;">
+                            <div class="text-white-75 medium">TOTAL INVESTMENTS</div>
+                            <div class="text-lg fw-bold">{{item.OPPORTUNITY_NAME}}</div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-truck">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="container-fluid" id="bat">
+    <div class="col col-lg-12">
+        <!-- Area Chart -->
+        <div class="container-fluid big1"
+            style="margin-top: 35px; margin-left: -30px; margin-right: 15px; background-color:whitesmoke"
+            *ngFor="let item of typeDetails;">
+            <div class="card  mb-2" (click)="preview1(item.opportunity_id)">
+                <!-- Card Body -->
+                <div class="card-body rowdy">
+                    <div id="pos" class="text-uppercase ">
+                        <p>{{item.OPPORTUNITY_NAME}}<span style="padding-left: 20%;">{{item.REVENUE}}
+                            </span></p>
+                        <p style="margin-left: 400px; margin-top: -30px;">{{item.ADDRESS}}</p>
+                    </div>
+                    <!-- <div class="container">
+                        <canvas id="firstone">{{canvas}}</canvas>
+                    </div>
+                    <div class="container">
+                        <canvas id="secondone">{{canvas}}</canvas>
+                    </div> -->
+                    <!-- <div id="chart-container"   >
+              <canvas  baseChart 
+              [labels]="chartLabels "
+              [datasets]="chartData"
+              [options]="chartOptions"
+              [legend]="barChartLegend"
+              ></canvas>
+            </div> -->
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="container-fluid" id="si">
+    <div class="container" style=" background-color:white">
+        <canvas id="firstone">{{canvas}}</canvas>
+    </div><br>
+    <span id="rebel">
+
+    </span><br><br>
+    <div class="container" style=" background-color:white">
+        <canvas id="secondone">{{canvas}}</canvas>
+    </div><br>
+    <span id="rebel">
+
+    </span><br><br>
+    <div class="container" style=" background-color:white">
+        <canvas id="thirdone">{{canvas}}</canvas>
+    </div><br>
+
+    <span id="rebel">
+    </span><br><br><br>
+    <div class="container" style=" background-color:white">
+        <canvas id="fourthone">{{canvas}}</canvas>
+    </div><br>
+
+    <span id="rebel">
+
+    </span><br><br><br>
+    <div class="container" style=" background-color:white">
+        <canvas id="fifthone">{{canvas}}</canvas>
+    </div>
+
+    <div class="container" style=" background-color:white">
+        <canvas id="sixthone">{{canvas}}</canvas>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+.sidenav{
+    background: #33cfc8;
+    min-height: calc(100vh - 0px);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height:100%;
+    position: fixed;
+}
+.navlable{
+
+    font-size: 10px;
+    color: #4a454594;
+    padding-top: 17px;
+    
+    
+}
+.inline{
+ cursor: pointer;
+ padding-top: 35px;
+}
+
+
+
+
+.navdown{
+    position: absolute;
+    bottom:80px;
+    display: grid;
+   
+}
+.custimg{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.custimg1{
+    position: absolute;
+    left: 59%;
+    transform: translate(-16%, -50%);
+}
+.out{
+    margin-top: 500px;
+    position: absolute;
+    bottom:15px;
+    display: grid;
+}

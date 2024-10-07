@@ -1,0 +1,42 @@
+<body >
+    <div style="display: flex;" >
+        <div class="col-lg-1 col-md-1 col-sm-1">
+            <app-layout></app-layout>
+        </div>
+
+        <div class="container">
+
+            <table class="table table-bordered tab1" style="width: 129%;" >
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col"> FULL_NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">PHONE_NUMBER</th>
+                    <th scope="col">OPPORTUNITY_NAME</th>
+                    <th scope="col">LOCATION</th>
+                    <th scope="col">USER_IP</th>
+                    <th scope="col">USER_DATE_CREATED</th>
+                    <th scope="col">USER_DEVICE</th>
+                </tr>
+
+                <tbody *ngIf="crudData.length>0">
+                    <tr *ngFor="let item of crudData">
+                        <th scope="row">{{item. FULL_NAME}}</th>
+                        <td>{{item.EMAIL}}</td>
+                        <td>{{item.PHONE_NUMBER}}</td>
+                        <td>{{item.PRODUCT_NAME}}</td>
+                        <td>{{item.LOCATION}}</td>
+                        <td>{{item.USER_IP}}</td>
+                        <td>{{item.USER_DATE_CREATED}}</td>
+                        <td>{{item.USER_DEVICE}}</td>
+                    </tr>
+
+                </tbody>
+                <tbody *ngIf="crudData.length==0">
+                    <h1 style="color: red;">no record are found</h1>
+                </tbody>
+                
+            </table>
+        </div>
+    </div>
+</body>

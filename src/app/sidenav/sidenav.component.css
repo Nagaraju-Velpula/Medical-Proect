@@ -1,0 +1,42 @@
+.sidenav{
+    background: #33cfc8;
+    min-height: calc(100vh - 0px);
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height:100%;
+    position: fixed;
+}
+.navlable{
+
+    font-size: 10px;
+    color: #4a454594;
+    margin-top: 20px;
+}
+.navlable1{
+    font-size: 10px;
+    color: #4a454594;
+    margin-top: 7px;
+}
+.inline{
+ cursor: pointer;
+ margin-left: 15px;
+}
+.inline1{
+    cursor: pointer;
+    margin-top: 450px;
+    margin-left: 15px;
+   }
+.inline2{
+    cursor: pointer;
+}
+.navdown{
+    position: absolute;
+    bottom:80px;
+    display: grid;
+}
+#signout{
+    margin-left: -25%;
+}

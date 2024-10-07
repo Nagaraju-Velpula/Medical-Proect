@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="secondpage.component.css">
+    <title>ClinicalFirst's Investment page</title>
+</head>
+
+<body>
+    <header><img src="/assets/Images/first_pharmacy.png" alt="logo" id="logo" [routerLink]="['/invest/nav']"
+            routerLinkActive="active">
+
+        <div>
+            <button id="signup">
+                <p>SIGN UP</p>
+            </button>
+        </div>
+    </header>
+    <main>
+
+        <div class="flexpage" *ngFor="let item of typeDetails; ">
+            <div class="leftcontainer">
+
+                <div class="bigimagegroup">
+                    <img class="bigimg" src="assets/Images/featured-icu-ward-April-20-1@2x.png" alt="icuward">
+                    <img class="imgshadow" src="assets/Images/Rectangle 173.png" alt="shadow">
+                    <h6 class="bigimgtitle">{{item.OPPORTUNITY_NAME}}</h6>
+                </div>
+
+                <div class="cashflow">
+                    <p class="flowtitle">CASH FLOW</p>
+                    <div class="flowcard">
+                        <div class="flowcard1">
+                            <p class="subtitle">REVENUE</p>
+                            <p class="flowvalue">{{item.REVENUE}}</p>
+                            <div class="progresss">
+                                <progress class="progress-bar" role="progressbar" max="10000000"
+                                    value="{{item.REVENUE}}" aria-valuenow="item.REVENUE">
+                                    <span class="title"> </span>
+                                </progress>
+                            </div>
+                        </div>
+                        <div class="flowcard2">
+                            <p class="subtitle">MANAGEMENT FEES</p>
+                            <p class="flowvalue">{{item.EXPENSES}}</p>
+                            <div class="progresss">
+                                <progress class="progress-bar" role="progressbar" max="1000000"
+                                    value="{{item.EXPENSES}}" aria-valuenow="item.EXPENSES">
+                                    <span class="title"> </span>
+                                </progress>
+                            </div>
+                        </div>
+                        <div class="flowcard3">
+                            <p class="subtitle">TAX</p>
+                            <p class="flowvalue">{{item.TAX}} %</p>
+                            <div class="progresss">
+                                <progress class="progress-bar" role="progressbar" max="100" value="{{item.TAX}}"
+                                    aria-valuenow="item.TAX">
+                                    <span class="title"> </span>
+                                </progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="finmodel">
+                    <p class="fintitle">FINANCIAL MODEL</p>
+                    <div class="charttable">
+                        <div class="table">
+                            <table class="stats">
+                                <tr class="xrow">
+                                    <th class="xaxis">DAY0 </th>
+                                    <th class="xaxis">YEAR1</th>
+                                    <th class="xaxis">YEAR2</th>
+                                    <th class="xaxis">YEAR3</th>
+                                    <th class="xaxis">YEAR4</th>
+                                    <th class="xaxis">YEAR5</th>
+                                    <th class="xaxis">YEAR6</th>
+                                    <th class="xaxis">YEAR7</th>
+                                    <th class="xaxis">YEAR8</th>
+                                    <th class="xaxis">YEAR9</th>
+                                    <th class="xaxis">YEAR10</th>
+                                </tr>
+                            </table>
+                            <table class="statvalues">
+                                <tr class="ycol">
+                                    <td>$4,500,000</td>
+                                </tr>
+                                <tr class="ycol">
+                                    <td>$3,000,000</td>
+                                </tr>
+                                <tr class="ycol">
+                                    <td>$2,500,000</td>
+                                </tr>
+                                <tr class="ycol">
+                                    <td>$2,500,000</td>
+                                </tr>
+                                <tr class="ycol">
+                                    <td>$1,500,000</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="address">
+                    <p class="addtitle">TENANT DETAILS</p>
+                    <div class="tenantcard">
+                        <div class="tenantcard1">
+                            <p class="subtitle">TENANT NAME</p>
+                            <p class="tenantsubtitle">{{item.TENANT_NAME}}</p>
+                        </div>
+                        <div class="tenantcard2">
+                            <p class="subtitle">COUNTRY</p>
+                            <p class="tenantsubtitle">{{item.TENANT_COUNTRY}}</p>
+                        </div>
+                        <div class="tenantcard3">
+                            <p class="subtitle">CONTRCT DURATION</p>
+                            <p class="tenantsubtitle">{{item.CONTRACT_DURATION}}</p>
+                        </div>
+                    </div>
+                    <p class="tenantdesc">DESCRIPTION</p>
+                    <p class="desc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                        accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                        diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                        voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                        gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+                    <!-- <p class="tenanttime">TIME PERIOD</p>
+                    <div class="timespan">
+                        <div class="timecard1">
+                            <p class="subtitle">Contract Begins</p>
+                            <p class="time-title">{{item.STARTING_DATE}}</p>
+                        </div>
+                        <hr class="dottedline">
+                        <div class="timecard2">
+                            <p class="subtitlee">Lock-in Period</p>
+                            <p class="timetitle">{{item.CONTRACT_DURATION}} Years</p>
+                        </div>
+                        <hr class="dottedline">
+                        <div class="timecard3">
+                            <p class="subtitlee">Contract Ends</p>
+                            <p class="timetitle">{{item.ENDING_DATE}}</p>
+                        </div>
+
+                    </div> -->
+                    <p class="addtitle">TIME PERIOD</p>
+                    <div class="tenantcard">
+                        <div class="tenantcard1">
+                            <p class="subtitle">CONTRACT BEGINS</p>
+                            <p class="tenantsubtitle">{{item.STARTING_DATE}}</p>
+                        </div>
+                        <div class="tenantcard2">
+                            <p class="subtitle">LOCK-IN-PERIOD</p>
+                            <p class="tenantsubtitle">{{item.CONTRACT_DURATION}}</p>
+                        </div>
+                        <div class="tenantcard3">
+                            <p class="subtitle">CONTRACT ENDS</p>
+                            <p class="tenantsubtitle">{{item.ENDING_DATE}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="rightcontainer">
+                <div class="invdetails">
+                    <div class="invcontent">
+                        <div class="invamount">
+                            <p class="invtitle">MINIMUM INVESTMENT</p>
+                            <p class="invvalue">{{item.INVESTMENT_AMOUNT}}</p>
+                        </div>
+                        <div>
+
+                        </div>
+
+                        <div class="yellowcard">
+                            <div class="infocard">
+                                <p class="infotitle">ROI</p>
+
+                                <circle-progress class="SizedBox" [percent]="item.ROI" [radius]="40"
+                                    [outerStrokeWidth]="5" [innerStrokeWidth]="8" [outerStrokeColor]="'#09a59d'"
+                                    [innerStrokeColor]="'white'" [showSubtitle]="false" [animation]="true"
+                                    [animationDuration]="700" style="padding-right: -5px;"></circle-progress>
+                            </div>
+                            <div class="infocard1">
+                                <p class="infotitle">TYPE</p>
+                                <p class="info">{{item.OPPORTUNITY_TYPE}}</p>
+                            </div> `
+                            <div class="infocard2">
+                                <p class="infotitle">LOCATION</p>
+                                <p class="info">{{item.AREA_NAME}}</p>
+                            </div>
+                            <div class="infocard3">
+                                <p class="infotitle">STANDARD</p>
+                                <p class="info">{{item.AREA_STANDARD}}</p>
+                            </div>
+                            <!---(click)="preview1(item.ID)"--->
+
+                            <div class="investbtn">
+                                <button class="investnow" (click)="openSignUp(item.REQUEST_ID)">
+                                    <p style="margin-top: 6px;">INVEST NOW </p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="invoverview">
+                    <p class="invsttitle">INVESTMENT OVERVIEW</p>
+                    <div class="invscroll">
+                        <p class="ivstdesc">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                            est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br> <br>Lorem ipsum
+                            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                            est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. <br> <br>Lorem ipsum
+                            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                            accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                            est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+                            amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
+                            gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                    </div>
+                </div>
+                <div class="downdocument">
+                    <p class="downtitle">INVESTMENT DOCUMENTS</p>
+                    <div class="downdocs">
+                        <div class="documentbutton">
+                            <p class="docname">Elevator Pitch</p>
+                            <img src="assets/Images/down-icon.svg" alt="" class="downicon">
+                        </div>
+                        <div class="documentbutton">
+                            <p class="docname">Term Sheet</p>
+                            <img src="assets/Images/down-icon.svg" alt="" class="downicon">
+                        </div>
+                        <div class="documentbutton">
+                            <p class="docname">Investors' Rights Agreement</p>
+                            <img src="assets/Images/down-icon.svg" alt="" class="downicon">
+                        </div>
+                        <div class="documentbutton">
+                            <p class="docname">Stock Purchase Agreement</p>
+                            <img src="assets/Images/down-icon.svg" alt="" class="downicon">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <div class="footer">
+        <p class="copyright">&copy; FirstPharmacy 2021</p>
+    </div>
+
+
+</body>
+
+</html>

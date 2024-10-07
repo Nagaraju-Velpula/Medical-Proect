@@ -1,0 +1,71 @@
+body{
+    background-image:url("../../../assets/Images/AdobeStock3.jpeg") !important ;
+    position: fixed;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    display:block;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+.cardrow{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 32px;
+    
+  }
+  .bg-green{
+    background-color: #13dd80;
+    border-radius: 13px;
+    color: #fff;
+}
+.fs-11{
+    font-size: 11px;
+}
+.btn-height{    
+    height: 30px !important;
+}
+.btn-black{
+    background-color: #040404;
+    color: #fff;
+   
+}
+.bg-white{
+    background-color: #fff;
+    font-size: 11px;
+}
+.fs-11{
+    font-size: 11px;
+}
+.card-bg{
+    background-color: #fff;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.sub-head{
+    font-weight: 500;
+    color: white;
+    text-transform: capitalize;
+}
+.search-img{
+    background-image: url("../../../assets//Images/search.png");
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: right;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+#opn{
+    color: white;
+}
+.row{
+    color: white;
+}
+#logo{
+    cursor: pointer;
+    height: 40px;
+}

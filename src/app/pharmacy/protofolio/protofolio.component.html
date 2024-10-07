@@ -1,0 +1,111 @@
+<div class="col-lg-1 col-md-1 col-sm-1 navside">
+    <app-sidenav></app-sidenav>
+</div>
+<div>
+    <img src="assets/Images/first_pharmacy.png" alt="logo" id="logo">
+</div>
+
+<div class="all">
+    <div class="row m-0" *ngFor="let item of typeDetails;">
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 mb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3" style="background-color:
+            #fff;">
+                <div class="pt-3">
+                    <div class="invlabel mb-1"> INVESTMENT NAME</div>
+                    <div class="heading mb-1">{{item.OPPORTUNITY_NAME}}</div>
+                    <div class="add mb-1">{{item.ADDRESS}}</div>
+                    <div class="invlabel mb-1"> INVESTMENT AMOUNT</div>
+                    <div class="invamount">{{item.INVESTMENT_AMOUNT}}</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 mb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3" style="background-color:
+            #fff;">
+                <div class="pt-3">
+                    <div class="mb-1 plhead">Profit/loss</div>
+                    <div class="plamt">
+                        <span>{{item.PROFIT_LOSS}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 mt-3 mb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3" style="background-color:
+            #fff;">
+                <div class="pt-3">
+                    <div class="mb-1 plhead">REVENUE</div>
+                    <div class="revamt">
+                        <span>{{item.REVENUE}}</span>
+                    </div>
+                    <div class="mb-1 plhead">EXPENSES</div>
+                    <div class="expamt">
+                        <span>{{item.EXPENSES}}</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row m-0">
+        <div class="col-lg-4 col-md-4 col-sm-12 mb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3" style="background-color:
+            #fff;">
+                <div class="pt-1">
+                    <div class="mb-1 plhead">Expected REVENUE</div>
+                    <canvas id="firstone"></canvas>
+                    <div class="row m-0">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                            <div>AMOUNT</div>
+                            <div class="cham">
+                                <span>78956</span>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+
+                            <div>GROWTH</div>
+                            <div class="cham">
+                                <span>50%</span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12 mb-3">
+            <div class="col-lg-12 col-md-12 col-sm-12 pb-3" style="background-color:
+            #fff;">
+                <div class="mb-1 plhead"> REVENUE</div>
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Order Id</th>
+                                <th scope="col">Date of Order</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

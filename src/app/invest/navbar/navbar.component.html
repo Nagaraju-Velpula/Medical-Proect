@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="fixed-background">
+  </div>
+  <header><img src="assets/Images/first_pharmacy.png" alt="logo" id="logo">
+    <!-- <nav>
+      <ul class="nav-list">
+        <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">HOW TO INVEST</a></li>
+        <li><a href="#">DOCUMENTATION</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav> -->
+    <a id="login">
+      <p id="log" (click)="openLogin()">LOGIN</p>
+    </a>
+  
+  </header>
+  <div class="containerr" [ngStyle]="{'background-image': 'url('+ actualImage + ')'}">
+  <main>
+    <div class="herocontainer">
+      <div>
+        <h1 id="title">Invest in Life, <br>
+          Earn in RealLife</h1>
+
+        <button id="cta-btn" (click)="myElement.scrollIntoView({ behavior:
+            'smooth', block: 'start' })">
+          INVEST NOW
+        </button>
+      </div>
+    </div>
+  </main>
+  <div class="underlineimg" (click)="myElement.scrollIntoView({ behavior:
+      'smooth', block: 'start' })">
+    <ul>
+      <li id="arrowup"><span class="arrow arrow-top"></span></li>
+    </ul>
+    <!-- <img src="assets/Images/underline3.jpg" alt="line"> -->
+    <p id="explore">EXPLORE OPPORTUNITIES</p>
+    <span #myElement>
+    </span>
+  </div>
+
+
+  <div class="container-fluid">
+    <span class="sub-head col-lg-12 col-sm-12 col-md-12">Small Business</span>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+            smallBusiness.slice(startPage,paginationLimit)">
+        <span class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+        <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+        </div>
+        <div class="row m-0" id="size">
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">Minimum Investment</div>
+            <div class="number">{{item.INVESTMENT_AMOUNT}}</div>
+          </div>
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">ROI Rate:</div>
+            <div class="number">{{item.ROI}}%</div>
+
+          </div>
+          <button id="view-btn" (click)="preview1(item.ID)">VIEW OPPORTUNITY</button>
+         
+        </div>
+      </div>
+    </div>
+    <div class="viewmo">
+      <p *ngIf="paginationLimit < smallBusiness.length" (click)="showMoreItems()">
+        Show More
+      </p>
+      <p *ngIf="paginationLimit > 4" (click)="showLessItems()">
+        Show Less
+      </p>
+    </div>
+  </div>
+
+
+
+  <div class="container-fluid">
+    <span class="sub-head col-lg-12 col-sm-12 col-md-12">Medium Business</span>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+          mediumBusiness.slice(startPage,paginationLimit1)">
+        <span class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+        <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+        </div>
+        <div class="row m-0" id="size">
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">Minimum Investment</div>
+            <div class="number">{{item.INVESTMENT_AMOUNT}}</div>
+          </div>
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">ROI Rate:</div>
+            <div class="number">{{item.ROI}}%</div>
+
+          </div>
+          <button id="view-btn" (click)="preview1(item.ID)">VIEW OPPORTUNITY</button>
+        </div>
+      </div>
+    </div>
+    <div class="viewmo">
+      <p *ngIf="paginationLimit1 < mediumBusiness.length" (click)="showMoreItems1()">
+        Show More
+      </p>
+      <p *ngIf="paginationLimit1 > 4" (click)="showLessItems1()">
+        Show Less
+      </p>
+    </div>
+  </div>
+
+
+  <div class="container-fluid">
+    <span class="sub-head col-lg-12 col-sm-12 col-md-12">Large Business</span>
+    <div class="row">
+      <div class="col-sm-12 col-md-3 col-lg-3 mt-3 mb-3" *ngFor="let item of
+          largeBusiness.slice(startPage,paginationLimit2)">
+        <span class="sub-head1 col-lg-12 col-sm-12 col-md-12">{{item.OPPORTUNITY_NAME}}</span>
+        <div class="col-lg-12 col-sm-12 col-md-12"><img [src]="item.oppImage" alt="ctscan" width="100%">
+        </div>
+        <div class="row m-0" id="size">
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">Minimum Investment</div>
+            <div class="number">{{item.INVESTMENT_AMOUNT}}</div>
+          </div>
+          <div class="number" class="col-lg-6 col-sm-6 col-md-6">
+            <div class="number">ROI Rate:</div>
+            <div class="number">{{item.ROI}}%</div>
+
+          </div>
+          <button id="view-btn" (click)="preview1(item.ID)">VIEW OPPORTUNITY</button>
+        </div>
+      </div>
+    </div>
+    <div class="viewmo">
+      <p *ngIf="paginationLimit2 < mediumBusiness.length" (click)="showMoreItems2()">
+        Show More
+      </p>
+      <p *ngIf="paginationLimit2 > 4" (click)="showLessItems2()">
+        Show Less
+      </p>
+    </div>
+  </div>
+  <div class="footer">
+    <p class="copyright">&copy; FirstPharmacy 2021</p>
+  </div>
+</div>
+</body>
+
+</html>
